@@ -1,20 +1,20 @@
 # Use the official Golang image as a build stage
-FROM golang:1.20 AS builder
+FROM golang:1.23.0 AS builder
 
 # Set the working directory inside the container
 WORKDIR /app
 
-# Copy the go.mod and go.sum files and download dependencies
+# Copy go.mod and go.sum, then download dependencies
 COPY go.mod go.sum ./
-RUN go mod download
+RUN go mod tidy
 
 # Copy the entire application code to the container
 COPY . .
 
-# Build the Go application
-RUN go build -o main .
+# Build the Go application with static linking for compatibility with Alpine
+RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o /app/main .
 
-# Use a smaller image for the final stage
+# Use a minimal image for the final stage
 FROM alpine:latest
 
 # Set the working directory inside the final container

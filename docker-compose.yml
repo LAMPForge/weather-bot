@@ -13,4 +13,3 @@ services:
       - API_KEY = your_api_key                    
       - LAT = your_latitude                     
       - LONG = your_longitude                    
-    restart: always
