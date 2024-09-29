@@ -1,10 +1,7 @@
 package main
 
 import (
-	"log"
 	"os"
-
-	"github.com/joho/godotenv"
 )
 
 type Config struct {
@@ -16,10 +13,10 @@ type Config struct {
 }
 
 func getEnv() *Config {
-	err := godotenv.Load(".env")
-	if err != nil {
-		log.Fatalf("Error loading .env file")
-	}
+	// err := godotenv.Load(".env")
+	// if err != nil {
+	// 	log.Fatalf("Error loading .env file")
+	// }
 	conf := Config{
 		API_KEY:            os.Getenv("API_KEY"),
 		LAT:                os.Getenv("LAT"),
