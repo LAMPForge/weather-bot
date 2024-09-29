@@ -6,6 +6,8 @@ import (
 	"net/http"
 	"sync"
 
+	_ "time/tzdata"
+
 	"gopkg.in/robfig/cron.v2"
 )
 
