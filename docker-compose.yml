@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - TELEGRAM_BOT_TOKEN=your_telegram_bot_token  
+      - CHAT_ID=your_chat_id                        
+      - API_KEY = your_api_key                    
+      - LAT = your_latitude                     
+      - LONG = your_longitude                    
+    restart: always
