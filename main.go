@@ -29,7 +29,7 @@ func InitController(config *Config) Controller {
 }
 
 func run(c ControllerIF) {
-	c.set_cron("TZ=Asia/Bangkok 30 16 * * * *", func() {
+	c.set_cron("TZ=Asia/Bangkok 0 16 * * *", func() {
 		c.sendWeatherUpdate()
 	})
 }
