@@ -23,6 +23,9 @@ WORKDIR /app
 # Copy the built executable from the builder stage
 COPY --from=builder /app/main .
 
+# Copy the .env file
+COPY .env . 
+
 # Expose the port that your application uses
 EXPOSE 8080
 

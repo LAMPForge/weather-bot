@@ -8,8 +8,8 @@ services:
     ports:
       - "8080:8080"
     environment:
-      - TELEGRAM_BOT_TOKEN=your_telegram_bot_token  
-      - CHAT_ID=your_chat_id                        
-      - API_KEY = your_api_key                    
-      - LAT = your_latitude                     
-      - LONG = your_longitude                    
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - CHAT_ID=${CHAT_ID}                        
+      - API_KEY = ${API_KEY}                    
+      - LAT = ${LAT}                     
+      - LONG = ${LONG}                    
